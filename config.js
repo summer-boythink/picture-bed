@@ -5,4 +5,5 @@ module.exports = {
     pass:"tang", //登录密码
     Bucket:'you_bucket',
     Region:'ap-shanghai',
+    Cookie:["localhost"] //*必须填写(部署的域名或者IP地址)，用于判断权限
 }

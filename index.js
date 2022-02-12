@@ -32,9 +32,13 @@ var server = http.createServer(function(req, res){
             code:200,
             meg:"yes"
           }
-          res.setHeader("Set-Cookie", [
-              `name=${str.user}; domain=localhost; path=/; httpOnly=true;Expires=${new Date(Date.now() + 1000 * 60 * 60 * 24 * 7).toGMTString()}`
-          ]);
+          let auth = [];
+          config.Cookie.forEach(v => {
+            auth.push(
+              `name=${str.user}; domain=${v}; path=/; httpOnly=true;Expires=${new Date(Date.now() + 1000 * 60 * 60 * 24 * 7).toGMTString()}`
+            )
+          })
+          res.setHeader("Set-Cookie", auth);
           res.end(JSON.stringify(r))
         }else{
           let r = {
