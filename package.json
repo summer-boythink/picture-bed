@@ -7,7 +7,8 @@
     "dev": "nodemon index.js"
   },
   "dependencies": {
-    "cos-nodejs-sdk-v5": "^2.9.13"
+    "cos-nodejs-sdk-v5": "^2.9.13",
+    "nodemon": "^2.0.10"
   },
   "devDependencies": {
     "formidable": "^1.2.2"
